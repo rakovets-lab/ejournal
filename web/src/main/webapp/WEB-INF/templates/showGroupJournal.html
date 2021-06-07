@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Журнал по предмету</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Журнал по предмету</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>№ п/п</td>
+			<td>Фамилия и имя</td>
+			<td>Дата</td>
+			<td>Дата</td>
+			<td>Дата</td>
+			<td>Дата</td>
+			<td>Средняя отметка по предмету</td>
+		</thead>
+		<tr>
+			<td>1</td>
+			<td>Иванов Иванов</td>
+			<td>A</td>
+			<td>A</td>
+			<td>A</td>
+			<td>A</td>
+			<td>A</td>
+		</tr>		
+	</table>
+	<h2>Тематическое планирование</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Номер занятия</td>
+			<td>Тема</td>
+			<td>Прмечание</td>
+		</thead>
+		<tr>
+			<td>1</td>
+			<td>Введение в Java</td>
+			<td>Замена: Кошман С.И.</td>
+		</tr>		
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

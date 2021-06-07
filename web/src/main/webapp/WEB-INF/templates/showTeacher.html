@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Информация о преподавателе</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<div th:replace="adminTool :: div"></div>
+	<h2>Информация о преподавателе</h2>
+	<p th:text="'Фамилия: '+${teacher.lastName}">Фамилия</p>
+	<p th:text="'Имя: '+${teacher.firstName}">Имя: Дмитрий</p>
+	<p th:text="'Адрес: г.'+${teacher.address.city}+', ул.'+${teacher.address.street}+', д.'+${teacher.address.house}+', кв.'+${teacher.address.apartment}">Адрес:</p>
+
+	
+	<h2>Достижения в преподавательской деятельности</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Название соревнования/конкурса</td>
+			<td>Номинация</td>
+			<td>Команда/Ребенок</td>
+			<td>Место</td>
+			<td>Дата</td>
+			<td>Диплом</td>
+		</thead>
+		<tr>
+			<td>Роботурнир-2017</td>
+			<td>Hello Robots!</td>
+			<td>Шидловский Богдан</td>
+			<td>2 место</td>
+			<td>21.05.2017</td>
+			<td>diplom2.jpg</td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

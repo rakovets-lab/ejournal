@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Информация о родителе</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+
+	<li><a href="addChild.html" th:href="@{'/update/parent/'+${parent.id}}">Изменить</a></li>
+	<h2>Информация о родителе:</h2>
+	<p th:text="'Фамилия: '+${parent.lastName}">Фамилия</p>
+	<p th:text="'Имя: '+${parent.firstName}">Имя: Дмитрий</p>
+	<p th:text="'Адрес: г.'+${parent.address.city}+', ул.'+${parent.address.street}+', д.'+${parent.address.house}+', кв.'+${parent.address.apartment}">Адрес:</p>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

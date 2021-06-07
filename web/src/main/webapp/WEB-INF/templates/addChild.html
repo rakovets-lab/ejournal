@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Добавить ребенка</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Добавить ребенка</h2>
+	<form th:action="@{/add/child}" method="post" th:object="${child}">
+		<label>Почта
+			<input type="text" th:field="*{email}">
+		</label><br>
+		<label>Пароль
+			<input type="password" th:field="*{password}">
+		</label><br>
+		<label>Имя
+			<input type="text" th:field="*{firstName}">
+		</label><br>
+		<label>Фамилия
+			<input type="text" th:field="*{lastName}">
+		</label><br>
+		<label>Мобильный телефон
+			<input type="text" th:field="*{mobile}">
+		</label><br>
+		<label>Дата рождения
+			<input type="date" th:field="*{birthday}">
+		</label><br>
+		<label>Школа
+			<input type="text" th:field="*{school}">
+		</label><br>
+		<label>Класс
+			<input type="text" th:field="*{educationClass}">
+		</label><br>
+		<label>Группа
+			<select th:field="*{group.id}">
+				<option th:each="eduGroup : ${groups}" th:text="${eduGroup.title}" th:value="${eduGroup.id}">Название группы</option>
+			</select>
+		</label><br>
+		<label>Родитель
+			<select th:field="*{parent.id}">
+				<option th:each="parent : ${parents}" th:text="${parent.lastName}+' '+${parent.firstName}" th:value="${parent.id}">Родитель</option>
+			</select>
+		</label><br>
+		<input type="submit" value="Добавить">
+	</form>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

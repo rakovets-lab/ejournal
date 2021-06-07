@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Методист: главная</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h1><a th:text="${user.lastName}+' '+${user.firstName}" th:href="@{'/show/'+${#strings.toLowerCase(user.getRole().toString())}+'/'+${user.id}}">Профиль</a></h1>
+	<table class="table table-bordered">
+		<tr>
+			<td>
+				<h2>Просмотр:</h2>
+				<form action="/show/courses" method="GET">
+					<input type="submit" value="Курсы"></input>
+				</form><br>
+				<form action="/show/children" method="GET">
+					<input type="submit" value="Дети"></input>
+				</form><br>
+				<form action="/show/parents" method="GET">
+					<input type="submit" value="Родители"></input>
+				</form><br>
+				<form action="/show/teachers" method="GET">
+					<input type="submit" value="Преподаватели"></input>
+				</form><br>
+				<form action="/show/groups" method="GET">
+					<input type="submit" value="Группы"></input>
+				</form><br>
+			</td>
+			<td th:if="'METHODIST' == ${user.role.toString()}">
+
+				<h2>Добавление:</h2>
+				<form action="/add/methodist" method="GET">
+					<input type="submit" value="Методиста"></input>
+				</form><br>
+				<form action="/add/child" method="GET">
+					<input type="submit" value="Ребенка"></input>
+				</form><br>
+				<form action="/add/parent/1" method="GET">
+					<input type="submit" value="Родителя"></input>
+				</form><br>
+				<form action="/add/teacher" method="GET">
+					<input type="submit" value="Преподавателя"></input>
+				</form><br>
+				<form action="/add/group" method="GET">
+					<input type="submit" value="Группу"></input>
+				</form><br>
+			</td>
+		</tr>
+		</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

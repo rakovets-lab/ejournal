@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Главная: родитель</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Список детей</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Фамилия и имя</td>
+			<td>Группа</td>
+			<td>Договор</td>
+		</thead>
+		<tr th:each="child:${children}">
+			<td><a href="showChild.html" th:href="@{'/show/child/' + ${child.id}}" th:text="${child.lastName}+' '+${child.firstName}">ФИ ребенка</a></td>
+			<td><a th:href="@{'/show/group/'+${child.group.id}}" th:text="${child.group.title}"></a></td>
+			<td th:text="${child.contract.title}">Договор</td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

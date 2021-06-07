@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html  lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Информация о ребенке</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<div th:replace="adminTool :: div"></div>
+	<h2>Группа</h2>
+	<p>Название: Pr2-17</p>
+	<p>Время занятий: Понедельник, Среда 15:00</p>
+	<p>Количество человек в группе: 14</p>
+	
+	<h2>Изученные курсы</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Название курса</td>
+			<td>Средняя отметка</td>
+			<td>Преподаватель</td>
+			<td>Количество часов</td>
+		</thead>
+		<tr>
+			<td>Java</td>
+			<td>A</td>
+			<td>Раковец Дмитрий Владимирович</td>
+			<td>32</td>
+		</tr>
+	</table>
+	<h2>Текущие курсы</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Название курса</td>
+			<td>Отметка за занятие 1</td>
+			<td>Отметка за занятие 2</td>
+			<td>Отметка за занятие 3</td>
+			<td>Средняя отметка</td>
+		</thead>
+		<tr>
+			<td>Java</td>
+			<td>A</td>
+			<td>A</td>
+			<td>A</td>
+			<td>A</td>
+		</tr>
+	</table>
+	<h2>Достижения ребенка</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Название соревнования/конкурса</td>
+			<td>Номинация</td>
+			<td>Место</td>
+			<td>Дата</td>
+			<td>Преподаватель</td>
+			<td>Диплом</td>
+		</thead>
+		<tr>
+			<td>Роботурнир-2017</td>
+			<td>Hello Robots!</td>
+			<td>2 место</td>
+			<td>21.05.2017</td>
+			<td>Раковец Д.В.</td>
+			<td>diplom2.jpg</td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

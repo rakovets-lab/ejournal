@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Список родителей</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Список родителей</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Фамилия и имя</td>
+
+		</thead>
+		<tr th:each="parent:${parents}">
+			<td><a href="showParent.html" th:href="@{'/show/parent/' + ${parent.id}}" th:text="${parent.lastName}+' '+${parent.firstName}">ФИ родителя</a></td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

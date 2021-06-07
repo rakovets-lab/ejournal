@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Список курсов</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Курсы</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>Название</td>
+		</thead>
+		<tr th:each="course : ${courses}">
+			<td> <a href="showCourse.html" th:href="@{'/show/course/' + ${course.title}(page=1)}" th:text="${course.title}">Название курса</a></td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

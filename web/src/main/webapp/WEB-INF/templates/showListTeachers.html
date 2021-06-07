@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Список преподавателей</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Список преподавателей</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>ФИО</td>
+			<td>УНП</td>
+			<td>Дата регистрации</td>
+		</thead>
+		<tr th:each="teacher:${teachers}">
+			<td><a href="showTeacher.html" th:href="@{'/show/teacher/' + ${teacher.id}(page=1)}" th:text="${teacher.lastName}+' '+${teacher.firstName}">ФИ преподавателя</a></td>
+			<td th:text="${teacher.PAN}">УНП</td>
+			<td th:text="${teacher.registrationDate}">Дата регистрации</td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

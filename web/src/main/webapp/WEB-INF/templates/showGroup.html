@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title th:text="${group.title}">Название группы</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<div th:replace="adminTool :: div"></div>
+	<h2 th:text="'Группа'+${group.title}">Название группы</h2>
+	<table class="table table-bordered">
+		<thead>
+			<td>№</td>
+			<td>Ученик</td>
+		</thead>
+		<tr th:each="child, iterStat:${children}" th:class="${iterStat.odd}">
+			<td th:text="${iterStat.count}">1</td>
+			<td><a th:href="@{'/show/child/'+${child.id}}" th:text="${child.firstName}+' '+${child.lastName}">ФИ ребенка</a></td>
+		</tr>
+	</table>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

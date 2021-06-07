@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Добавить преподавателя</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Добавить преподавателя</h2>
+	<form th:action="@{/add/teacher}" method="post" th:object="${teacher}">
+		<label>Почта
+			<input type="text" th:field="*{email}">
+		</label><br>
+		<label>Пароль
+			<input type="password" th:field="*{password}">
+		</label><br>
+		<label>Имя
+			<input type="text" th:field="*{firstName}">
+		</label><br>
+		<label>Фамилия
+			<input type="text" th:field="*{lastName}">
+		</label><br>
+		<label>Мобильный телефон
+			<input type="text" th:field="*{mobile}">
+		</label><br>
+		<fieldset>
+			<legend>Адрес</legend>
+			<label>Город
+				<input type="text" th:field="*{address.city}">
+			</label><br>
+			<label>Улица
+				<input type="text" th:field="*{address.street}">
+			</label><br>
+			<label>Дом
+				<input type="text" th:field="*{address.house}">
+			</label><br>
+			<label>Квартира
+				<input type="text" th:field="*{address.apartment}">
+			</label><br>
+		</fieldset>
+		<fieldset>
+			<legend>Индивидуальный предприниматель</legend>
+			<label>УНП
+				<input type="text" th:field="*{PAN}">
+			</label><br>
+			<label>Дата регистрации
+				<input type="date" th:field="*{registrationDate}">
+			</label><br>
+		</fieldset>
+		<input type="submit" value="Добавить">
+	</form>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>

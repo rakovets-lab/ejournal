@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<body>
+	<header class="navbar" th:fragment="header">
+		<!--<link rel="stylesheet" href="/resources/css/main.css">-->
+		<table class="table table-bordered">
+			<tr>
+				<td><a th:href="@{/profile}">Главная</a></td>
+				<td></td>
+				<td><a th:href="@{/profile}">Профиль</a></td>
+				<td><form method="post" th:action="@{/logout}"><p class="submit"><input type="submit" name="commit" value="Выйти"></p></form></td>
+			</tr>
+		</table>
+    </header>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thy
+meleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Добавить методиста</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+	<div th:replace="header :: header"></div>
+	<h2>Добавить методиста</h2>
+	<form th:action="@{/add/methodist}" method="post" th:object="${user}">
+		<label>Почта
+			<input type="text" th:field="*{email}">
+		</label><br>
+		<label>Пароль
+			<input type="password" th:field="*{password}">
+		</label><br>
+		<label>Имя
+			<input type="text" th:field="*{firstName}">
+		</label><br>
+		<label>Фамилия
+			<input type="text" th:field="*{lastName}">
+		</label><br>
+		<label>Мобильный телефон
+			<input type="text" th:field="*{mobile}">
+		</label><br>
+		<input type="submit" value="Добавить">
+	</form>
+	<div th:replace="footer :: footer"></div>
+</body>
+</html>
