@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+
+  <properties>
+    <thymeleaf.version>3.0.6.RELEASE</thymeleaf.version>
+  </properties>
+
+  <parent>
+    <groupId>by.iteen</groupId>
+    <artifactId>ejournal</artifactId>
+    <version>${project.version}</version>
+  </parent>
+
+  <artifactId>web</artifactId>
+  <version>${project.version}</version>
+  <packaging>war</packaging>
+  <name>web Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>by.iteen</groupId>
+      <artifactId>service</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf</artifactId>
+      <version>${thymeleaf.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.thymeleaf</groupId>
+      <artifactId>thymeleaf-spring4</artifactId>
+      <version>${thymeleaf.version}</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.thymeleaf.extras</groupId>
+      <artifactId>thymeleaf-extras-java8time</artifactId>
+      <version>3.0.0.RELEASE</version>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <finalName>web</finalName>
+  </build>
+
+</project>
